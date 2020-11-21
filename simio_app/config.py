@@ -1,4 +1,5 @@
 import os
+from pathlib import Path
 from unittest.mock import Mock as ExampleClient
 
 from simio.app.config_names import APP, CLIENTS, VARS, WORKERS, OTHER
@@ -10,6 +11,7 @@ def get_config():
     return {
         APP: {
             APP.name: "simio_app",
+            APP.handlers_path: Path(__file__).parent / "handlers",
         },
         CLIENTS: {
             ExampleClient: {

@@ -1,1 +1,65 @@
-{"swagger": "2.0", "info": {"version": "0.1.0", "title": "simio_app"}, "paths": {"/v1/hello/{user_id}/": {"get": {"tags": ["example_handler"], "parameters": [{"in": "path", "name": "user_id", "required": true, "type": "integer"}], "responses": {"200": {"description": "Successful request"}, "400": {"description": "Invalid input"}}}, "post": {"tags": ["example_handler"], "parameters": [{"in": "body", "name": "ExampleModel", "schema": {"type": "object", "properties": {"some_number": {"type": "integer"}}}}, {"in": "path", "name": "user_id", "required": true, "type": "integer"}], "responses": {"200": {"description": "Successful request"}, "400": {"description": "Invalid input"}}}}}}
+{
+    "info": {
+        "title": "simio_app",
+        "version": "0.1.0"
+    },
+    "paths": {
+        "/v1/hello/{user_id}/": {
+            "get": {
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "user_id",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful request"
+                    },
+                    "400": {
+                        "description": "Invalid input"
+                    }
+                },
+                "tags": [
+                    "example_handler"
+                ]
+            },
+            "post": {
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "example",
+                        "schema": {
+                            "properties": {
+                                "some_number": {
+                                    "type": "integer"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    },
+                    {
+                        "in": "path",
+                        "name": "user_id",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful request"
+                    },
+                    "400": {
+                        "description": "Invalid input"
+                    }
+                },
+                "tags": [
+                    "example_handler"
+                ]
+            }
+        }
+    },
+    "swagger": "2.0"
+}

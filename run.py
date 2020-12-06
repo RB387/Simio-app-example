@@ -1,5 +1,9 @@
+import logging
+
 from simio.app.builder import AppBuilder
 from simio_app.config import get_config
+
+logging.basicConfig(level=logging.INFO)
 
 
 def main():

@@ -2,7 +2,7 @@ from typing import Optional
 
 import trafaret as t
 
-from simio.handler.base import BaseHandler
+from simio.handler import BaseHandler
 from simio.handler.router import route
 
 

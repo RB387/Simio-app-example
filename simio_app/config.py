@@ -1,7 +1,8 @@
 import os
 from pathlib import Path
 
-from simio.app.config_names import APP, CLIENTS, VARS, WORKERS, OTHER, CRONS
+from simio.app.config_names import APP, CLIENTS, VARS, DIRECTORS
+from simio.app import AsyncCronsDirector, AsyncWorkersDirector
 
 from simio_app.crons.heartbeat import heartbeat
 from simio_app.workers.ping import ping_worker
@@ -25,18 +26,17 @@ def get_config():
             "x": os.getenv("X"),
             "y": os.getenv("Y"),
         },
-        WORKERS: {
-            ping_worker: {
-                "sleep_time": 5
-            }
-        },
-        CRONS: {
-            "*/1 * * * *": (
-                heartbeat,
-            ),
-        },
-        OTHER: {
-            "something": 1,
+        DIRECTORS: {
+            AsyncWorkersDirector: {
+                ping_worker: {
+                    "sleep_time": 5
+                },
+            },
+            AsyncCronsDirector: {
+                "*/1 * * * *": (
+                    heartbeat,
+                ),
+            },
         },
     }
     # fmt: on

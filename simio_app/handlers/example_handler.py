@@ -6,7 +6,9 @@ from simio.handler import BaseHandler
 from simio.handler.router import route
 
 
-RequestSchema = t.Dict({t.Key("some_number"): t.ToInt(gte=0),})
+RequestSchema = t.Dict({
+    t.Key("some_number"): t.ToInt(gte=0),
+})
 
 
 @route(path="/v1/hello/{user_id}/")

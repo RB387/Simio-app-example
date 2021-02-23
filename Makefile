@@ -1,4 +1,4 @@
-lint:
+fmt:
 	black simio_app && \
 	black tests && \
 	pylint simio_app
